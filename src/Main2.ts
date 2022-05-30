@@ -13,6 +13,14 @@ function updateButtonEdit() {
     let editUserButtons = document.getElementsByClassName('update-student');
     for (let i = 0; i < editUserButtons.length; i++) {
         editUserButtons[i].addEventListener('click', () => {
+            let index = editUserButtons[i].getAttribute('value');
+            manager._students = students();
+            (document.getElementById('id1') as HTMLInputElement).value = manager._students[index]._id;
+            (document.getElementById('name1') as HTMLInputElement).value = manager._students[index]._name;
+            (document.getElementById('grade1') as HTMLInputElement).value = manager._students[index]._grade;
+            (document.getElementById('phone1') as HTMLInputElement).value = manager._students[index]._phone;
+            (document.getElementById('address1') as HTMLInputElement).value = manager._students[index]._address;
+            (document.getElementById('point1') as HTMLInputElement).value = manager._students[index]._point;
             document.getElementById('btn-confirm').addEventListener('click', confirm);
 
             function confirm() {

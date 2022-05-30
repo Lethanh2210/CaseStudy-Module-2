@@ -8,6 +8,14 @@ function updateButtonEdit() {
     let editUserButtons = document.getElementsByClassName('update-student');
     for (let i = 0; i < editUserButtons.length; i++) {
         editUserButtons[i].addEventListener('click', () => {
+            let index = editUserButtons[i].getAttribute('value');
+            manager._students = students();
+            document.getElementById('id1').value = manager._students[index]._id;
+            document.getElementById('name1').value = manager._students[index]._name;
+            document.getElementById('grade1').value = manager._students[index]._grade;
+            document.getElementById('phone1').value = manager._students[index]._phone;
+            document.getElementById('address1').value = manager._students[index]._address;
+            document.getElementById('point1').value = manager._students[index]._point;
             document.getElementById('btn-confirm').addEventListener('click', confirm);
             function confirm() {
                 let id = document.getElementById('id1').value;
